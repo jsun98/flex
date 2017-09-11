@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import 'semantic-ui-css/semantic.min.css'
-import { Header, Icon, Button } from 'semantic-ui-react'
+import { Header, Icon, Button, List } from 'semantic-ui-react'
 
 class App extends Component {
 
@@ -31,8 +31,14 @@ class App extends Component {
 					<span className="name">
 						Joshua Sun
 					</span>
+					<Header.Subheader>
+						<List bulleted horizontal link className='short-intro'>
+							<List.Item>Full-Stack Developer</List.Item>
+							<List.Item>Startup Founder</List.Item>
+							<List.Item>Open Source Contributor</List.Item>
+						</List>
+					</Header.Subheader>
 
-					<div className='section-divide'></div>
 					<Header.Subheader>
 						<span className='description'>
 							Bachelor of Software Engineering<br />
@@ -57,9 +63,9 @@ class App extends Component {
 								/>
 							</div>
 							<div className='section-divide'></div>
-							<Button inverted color='blue' onClick={() => {
+							<Button inverted color='facebook' onClick={() => {
 								window.open('https://drive.google.com/file/d/0B5b-3ZFIBgHBYkFlQUtiTmtzd2M/view?usp=sharing', '_blank')
-							}}><span className='button-text'>Resume</span></Button>
+							}}><span className='button-text'>Résumé</span></Button>
 						</span>
 					</Header.Subheader>
 				</Header>

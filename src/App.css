@@ -33,3 +33,12 @@
 .button-text {
 	font-size: 16pt;
 }
+
+.item {
+	font-size: 12pt !important;
+	color: white !important;
+}
+
+.item::before {
+	color: white !important;
+}
