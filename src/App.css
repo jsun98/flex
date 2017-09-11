@@ -1,6 +1,6 @@
 .app {
 	color: white;
-	position: fixed;
+	position: absolute;
 	top: 30vh;
 	width: 100%;
 }
@@ -9,19 +9,15 @@
 	font-size: 58pt;
 }
 
-.description-container {
-	margin-top: 30px !important;
-}
-
 .description {
 	color: white;
 	font-size: 18pt;
 	line-height: 1.2em;
 }
 
-.icons {
+.icons i {
 	font-size: 24pt !important;
-	display: table-cell !important;
+	display: inline-block !important;
 	padding: 0 15px !important;
 }
 

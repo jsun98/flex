@@ -5,6 +5,25 @@ import { Header, Icon, Button } from 'semantic-ui-react'
 
 class App extends Component {
 
+	constructor (props) {
+		super(props)
+		this.onMouseOverHandler = this.onMouseOverHandler.bind(this)
+		this.onMouseOutHandler = this.onMouseOutHandler.bind(this)
+		this.state = {
+			github: false,
+			email: false,
+			linkedin: false,
+		}
+	}
+
+	onMouseOverHandler (e) {
+		this.setState({ [e.target.getAttribute('value')]: true })
+	}
+
+	onMouseOutHandler (e) {
+		this.setState({ [e.target.getAttribute('value')]: false })
+	}
+
 	render () {
 		return (
 			<div className='app'>
@@ -12,14 +31,31 @@ class App extends Component {
 					<span className="name">
 						Joshua Sun
 					</span>
-					<Header.Subheader className='description-container'>
+
+					<div className='section-divide'></div>
+					<Header.Subheader>
 						<span className='description'>
+							Bachelor of Software Engineering<br />
 							University of Waterloo<br />
-							Bachelor of Software Engineering, Class of 2021<br />
+							Class of 2021<br />
 							<div className='section-divide'></div>
-							<Icon className='icons' name='github' link onClick={() => window.open('https://github.com/jsun98', '_blank')}/>
-							<Icon className='icons' name='mail' link onClick={() => window.location.href = 'mailto:joshuasun1998@icloud.com'} />
-							<Icon className='icons' name='linkedin square' link onClick={() => window.open('https://www.linkedin.com/in/josh-sun', '_blank')} />
+							<div className='icons'>
+								<Icon name='github' value='github' link loading={this.state.github}
+									onMouseOver={this.onMouseOverHandler}
+									onMouseOut={this.onMouseOutHandler}
+									onClick={() => window.open('https://github.com/jsun98', '_blank')}
+								/>
+								<Icon name='mail' value='email' link loading={this.state.email}
+									onClick={() => window.location.href = 'mailto:joshuasun1998@icloud.com'}
+									onMouseOut={this.onMouseOutHandler}
+									onMouseOver={this.onMouseOverHandler}
+								/>
+								<Icon name='linkedin square' value='linkedin' link loading={this.state.linkedin}
+									onClick={() => window.open('https://www.linkedin.com/in/josh-sun', '_blank')}
+									onMouseOut={this.onMouseOutHandler}
+									onMouseOver={this.onMouseOverHandler}
+								/>
+							</div>
 							<div className='section-divide'></div>
 							<Button inverted color='blue' onClick={() => {
 								window.open('https://drive.google.com/file/d/0B5b-3ZFIBgHBYkFlQUtiTmtzd2M/view?usp=sharing', '_blank')
